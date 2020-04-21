@@ -1,0 +1,224 @@
+/* IMPORTANT ! run sass with the command : npm run sass*/
+/* IMPORTANT ! run sass with the command : npm run sass*/
+/* IMPORTANT ! run sass with the command : npm run sass*/
+/* IMPORTANT ! run sass with the command : npm run sass*/
+
+@import "./partials/Utils/variables";
+@import "./partials/Utils/mixins";
+@import "./partials/Components/animations";
+@import "./partials/Base/base";
+
+@import url('https://fonts.googleapis.com/css?family=Devonshire&display=swap'); //font-family: devonshire (enchantee), menu segoe print
+@import url('https://fonts.googleapis.com/css?family=Croissant+One&display=swap'); //font-family: 'Croissant One' (alafrancaise), Menu Cambria
+@import url('https://fonts.googleapis.com/css?family=Cookie&display=swap'); //font-family: cookie (papilles)
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap'); //font-family: Kaushan script (gout)
+
+.menus {
+	padding: 1vw 2vw;
+	display:flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	@media (orientation: landscape) {
+		padding: 1.3vw 1.8vw; 
+	}
+	&__card {
+		width:40%;
+		height: 50vh; /*50% de la hauteur de l'écran = 50vh*/
+		margin: 1.3vw; /* 1.3% de la largeur de l'écran = 1.3vw*/
+		padding:1vw;
+		text-align: center;
+		box-shadow: 0 0 1.3vw #dad8d8;
+		display:flex;
+		flex-direction: column;
+		justify-content: center;
+		
+		@media (orientation: landscape) {
+			width:15%;
+			padding:0;
+			height : 40vh;
+			@media (max-width: 768px) {
+				width:40%;
+			}
+			@media (min-width: 768px) and (max-width: 992px) {
+				height: 50vh;
+				padding: 1.3vw;
+			}
+			@media (min-width: 992px) {
+				width: 20%;
+				height: 60vh;
+			}
+		}
+		&--orange {
+			background: map-get($colour-card, enchantee);
+		}
+		&--pink {
+			background: map-get($colour-card, alafrancaise);
+		}
+		&--blue {
+			background: map-get($colour-card, papilles);
+		}
+		&--green {
+			background: map-get($colour-card, gout);
+		}
+	}
+}
+
+.pos-rel {
+	position: relative;
+	bottom: 7%;
+
+	@media (orientation:landscape) {
+		bottom: 18%;
+		@media (min-width: 768px) and (max-width: 992px) {
+			bottom: 12%;
+		}
+	}
+
+	&__subtitle {
+
+		@media (orientation:landscape) {
+			@media (min-width: 501px) and (max-width: 768px) {
+				bottom: 25%;
+			}
+		}
+	}
+}
+
+.font {
+	font-weight: normal; /* not default bold*/
+	&__title{
+		margin: 0;
+		@media (orientation: landscape) {
+			height: 50%; /*separate __title and __subtitle*/
+		}
+		&--enchantee {
+			font-family: 'Devonshire';
+			font-size: 5vw;
+			@media (orientation: landscape) {
+				font-size: 3vw;
+				line-height: 2.6vw; /*no big space between "la note" and "enchantee" if they are one above the other*/
+			}
+		}
+		&--alafrancaise {
+			font-size: 3.5vw;
+			font-family: 'Croissant One';
+			background: linear-gradient(80deg, map-get($colour-text-alafrancaise, first-title) 0%,map-get($colour-text-alafrancaise, secund) 50%, map-get($colour-text-alafrancaise, last-title) 100%);
+			/*gradient color (degree of skew, $color left-to-right percent)*/
+			-webkit-background-clip: text; /*background becomes the color of the text */
+			color: transparent; /*text being transparent allows you to see the background-clip work.*/
+
+			@media (orientation: landscape) {
+				font-size: 2vw;
+			}
+		}
+		
+		&--papilles {
+			font-family: 'cookie';
+			font-size: 5.5vw;
+			background: linear-gradient(80deg, map-get($colour-text-papilles, first) 0%,map-get($colour-text-papilles, secund) 50%, map-get($colour-text-papilles, third) 100%);
+			-webkit-background-clip: text;
+			color: transparent;
+
+			@media (orientation: landscape) {
+				font-size: 3.5vw;
+			}
+		}
+		&--gout {
+			font-family: 'kaushan script';
+			font-size: 4.5vw;
+			background: linear-gradient(80deg, map-get($colour-text-gout, first) 0%,map-get($colour-text-gout, secund) 50%, map-get($colour-text-gout, third) 100%);
+			-webkit-background-clip: text;
+			color: transparent;
+
+			@media (orientation: landscape) {
+				font-size: 2.8vw;
+				@media (max-width: 992px) {
+					font-size: 3vw;	
+				}
+				
+			}
+		}
+	}
+	
+	&__subtitle {
+		font-size:5vw;
+
+		@media (orientation: landscape) {
+			font-size: 3vw;
+		}
+
+		&--enchantee {
+			font-size: 4vw;
+			font-family:'Segoe Print';
+			font-weight: bold;
+			margin-top: 1.3vw;
+			@media (orientation: landscape) {
+				font-size: 3vw;
+			}
+		}
+		&--alafrancaise {
+			font-family:'Cambria';
+			font-weight: bold;
+			font-size: 3.5vw;
+			color: map-get($colour-text-alafrancaise, first);
+		}
+		&--papilles {
+			font-family:'Segoe Print';
+			color: map-get($colour-text-papilles, third);
+		}
+		&--gout {
+			font-family: "Segoe Print";
+			color: map-get($colour-text-gout, first);
+		}
+	}
+}
+
+.btn {
+	display: flex;
+	justify-content: center; /*.btn in the middle of the page*/
+	text-align: center; /*content of .btn being in the middle of his parent*/
+	margin-bottom: 15vw; /*footer being fixed, allows .btn to be full visible.*/
+	
+	@media (orientation: landscape) {
+		margin-bottom: 8vw; 
+	}
+	&--soon {
+		width: 45%;
+		@include main-style; 
+		border-radius: 15px;
+		padding: 1.04vw;
+		margin: 2.6vw 0;
+		border: none;
+
+		@media (orientation:landscape) {
+			width: 25%;
+			
+			@media (max-width:768px) {
+				width: 35%;
+				padding: 0.8vw;
+			}
+			@media (min-width: 992px)  {
+				padding: 0.5vw;
+			}
+		}
+
+		> h2 {
+			font-size: 4vw; 
+			margin: 0; /*bouton being too big with parent's margin*/
+			@media (orientation: landscape) {
+				font-size: 2vw;
+				@media (max-width: 992px) {
+					font-size: 2.5vw;
+				}
+			}
+		}
+	}
+
+	&__dot {
+		height: 10px;
+		width: 10px;
+		background-color: $colour-secondary;
+		border-radius: 50%;
+		vertical-align: top;
+	}
+}

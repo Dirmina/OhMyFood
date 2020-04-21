@@ -1,0 +1,42 @@
+@mixin bordertest {
+	border: 1px black solid;
+}
+
+@mixin main-style {
+	background: $colour-primary;
+	color: $colour-secondary;
+	padding-top: 0.1vw;
+    padding-bottom: 0.1vw;
+}
+
+@mixin menu-details {
+	display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+@mixin menu-details__menus {
+	padding: 0 12vw 12vw 12vw;
+    text-align: center;
+}
+
+@mixin menu-details__card {
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 3.9vw;
+	text-align: center;
+	box-shadow: 0 0 1.3vw #dad8d8;
+	@media (orientation: landscape) {
+		@media (min-width: 992px) {
+			padding: 1.3vw;
+			padding-bottom: 2.5vw;
+		}
+	}
+}
+
+@mixin zoom-menu { 
+	transition: all 1s;
+}

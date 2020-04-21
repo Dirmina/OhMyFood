@@ -1,0 +1,21 @@
+{
+  "name": "wrinting-sass",
+  "version": "1.0.0",
+  "description": "cours sass",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./scss/main.scss:./css/style.css",
+    "enchantee": "sass --watch ./scss/menu-enchantee.scss:./css/style-menu-enchantee.css ",
+    "alafrancaise": "sass --watch ./scss/menu-alafrancaise.scss:./css/style-menu-alafrancaise.css",
+    "papilles": "sass --watch ./scss/menu-papilles.scss:./css/style-menu-papilles.css",
+    "gout": "sass --watch ./scss/menu-gout.scss:./css/style-menu-gout.css",
+    "prefix": "npx postcss ./css/style-menu-gout.css --use autoprefixer -d ./css/prefixed/"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "dependencies": {
+    "autoprefixer": "^9.7.5",
+    "postcss": "^7.0.27"
+  }
+}

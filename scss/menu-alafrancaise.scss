@@ -1,0 +1,129 @@
+/* IMPORTANT ! run sass with the command : npm run alafrancaise*/
+/* IMPORTANT ! run sass with the command : npm run alafrancaise*/
+/* IMPORTANT ! run sass with the command : npm run alafrancaise*/
+/* IMPORTANT ! run sass with the command : npm run alafrancaise*/
+@import "./partials/Utils/variables";
+@import "./partials/Utils/mixins";
+@import "./partials/Base/base";
+@import "./partials/Components/animations";
+
+@import url('https://fonts.googleapis.com/css?family=Croissant+One&display=swap'); /*font-family: 'Croissant One' (alafrancaise), Menu Cambria*/
+
+.alafrancaise {
+    background: map-get($colour-card, alafrancaise);
+    @include menu-details;
+}
+    
+.menus {
+    @include menu-details__menus;
+    &__card {
+       @include menu-details__card;
+    }
+}
+
+.font {
+    font-weight: normal;
+    font-family: "arial black"; /*title on the white*/
+    @media (orientation: landscape) {
+        @media (min-width: 992px) {
+            font-size: 2.3vw;
+        }
+    }
+    &__title{
+        &--alafrancaise {
+            font-size: 3vw;
+            font-family: 'Croissant One';
+            background: -webkit-linear-gradient(80deg, map-get($colour-text-alafrancaise, first-title) 0%,map-get($colour-text-alafrancaise, secund) 50%, map-get($colour-text-alafrancaise, last-title) 100%);
+            /*gradient color (degree of skew, $color left-to-right percent)*/
+            -webkit-background-clip: text;/*background becomes the color of the text*/
+            color: transparent;/*text being transparent allows you to see the background-clip work.*/
+        }            
+    }
+    &__table {
+		&--alafrancaise {
+			font-size: 1.8vw;
+            font-family: Cambria;
+            margin-bottom: 10vw;
+            @media (orientation: landscape) {
+                font-size: 2vw;
+            }
+        }
+        &--title {
+            font-size: 2.8vw;
+            @media (orientation: landscape) {
+                @media (min-width: 992px) {
+                    font-size: 2.5vw;
+                }
+            }
+        }
+
+	}
+	
+	&__color {
+		&--alafrancaise {
+			&-first {
+				color: map-get($colour-text-alafrancaise, first);
+			}
+			&-secund {
+				color: map-get($colour-text-alafrancaise, secund);
+			}
+			&-third {
+				color: map-get($colour-text-alafrancaise, third);
+			}
+		}
+    }
+}
+
+tr {
+    height: 3.9vw;
+}
+
+.table {
+    &__cell {
+        &--left {
+            text-align: left;
+            padding-left: 6.5vw;
+            @media (max-width:1280px){
+                padding-left: 6.5vw;
+                padding-right: 10vw;
+            }
+        }
+        &--right {
+            text-align: right;
+            font-weight: bold;
+            padding-right: 6.5vw;
+            @media(max-width:1280px) {
+                padding-right: 5.2vw;
+            }
+        }
+    }
+}
+
+.double-line--first { 
+    background: linear-gradient(to right, map-get($colour-text-alafrancaise, first-title), map-get($colour-card, alafrancaise), map-get($colour-card, alafrancaise), map-get($colour-text-alafrancaise, first-title)) no-repeat center;
+    /*no-repeat for 1 line*/
+    background-size:90vw 5px; /*horizontal size of the background, so the size of the gradient. height of the line.*/
+}
+
+.double-line--secund { 
+    background: linear-gradient(to right, map-get($colour-text-alafrancaise, secund), map-get($colour-card, alafrancaise), map-get($colour-card, alafrancaise), map-get($colour-text-alafrancaise, secund)) no-repeat center;
+    background-size:90vw 5px;
+}
+
+.double-line--third {   
+    background: linear-gradient(to right, map-get($colour-text-alafrancaise, third), map-get($colour-card, alafrancaise), map-get($colour-card, alafrancaise), map-get($colour-text-alafrancaise, third)) no-repeat center;
+    background-size:90vw 5px;
+}
+
+
+.anim-underline { /* see __animations.scss for extension.*/
+    &-first {
+        background: linear-gradient(to top, map-get($colour-text-alafrancaise, first-title) 0%, map-get($colour-text-alafrancaise, first-title) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+    }
+    &-secund {
+        background: linear-gradient(to top, map-get($colour-text-alafrancaise, secund) 0%, map-get($colour-text-alafrancaise, secund) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+    }
+    &-third {
+        background: linear-gradient(to top, map-get($colour-text-alafrancaise, third) 0%, map-get($colour-text-alafrancaise, third) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+    }
+}

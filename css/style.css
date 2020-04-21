@@ -1,0 +1,468 @@
+@charset "UTF-8";
+/* IMPORTANT ! run sass with the command : npm run sass*/
+/* IMPORTANT ! run sass with the command : npm run sass*/
+/* IMPORTANT ! run sass with the command : npm run sass*/
+/* IMPORTANT ! run sass with the command : npm run sass*/
+@import url("https://fonts.googleapis.com/css?family=Devonshire&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Croissant+One&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Cookie&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap");
+@keyframes dot--animation {
+  0% {
+    transform: translateX(-10px) scale(0);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(10px) scale(1);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(30px) scale(0);
+    opacity: 0;
+  }
+}
+.dot--animation > .btn__dot {
+  display: inline-block;
+  animation: dot--animation 2.5s infinite linear;
+}
+.dot--animation > .btn__dot:nth-child(1) {
+  animation-delay: 0.6s;
+}
+.dot--animation > .btn__dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.dot--animation > .btn__dot:nth-child(3) {
+  animation-delay: 0s;
+}
+
+.zoom__menu--enchantee, .zoom__menu--alafrancaise, .zoom__menu--papilles, .zoom__menu--gout {
+  transition: all 1s;
+}
+
+.zoom__menu--enchantee:hover, .zoom__menu--enchantee:active {
+  transform: scale(1.1);
+  opacity: 0.5;
+}
+
+.zoom__menu--alafrancaise:hover, .zoom__menu--alafrancaise:active {
+  transform: scale(1.2);
+  opacity: 0.5;
+}
+
+.zoom__menu--papilles:hover, .zoom__menu--papilles:active {
+  transform: scale(1.1);
+  opacity: 0.5;
+}
+
+.zoom__menu--gout:hover, .zoom__menu--gout:active {
+  transform: scale(1.1);
+  opacity: 0.5;
+}
+
+@keyframes btn--shake {
+  0% {
+    transform: translateX(1%);
+  }
+  1% {
+    transform: translateX(-1%);
+  }
+  2% {
+    transform: translateX(1%);
+  }
+  3% {
+    transform: translateX(-1%);
+  }
+  4% {
+    transform: translateX(1%);
+  }
+  5% {
+    transform: translateX(-1%);
+  }
+  6% {
+    transform: translateX(1%);
+  }
+  7% {
+    transform: translateX(-1%);
+  }
+  7%, 100% {
+    transform: translateX(0);
+  }
+}
+.anim-underline {
+  text-decoration: none;
+  background: linear-gradient(to top, #000 0%, #000 10%, transparent 10.01%) no-repeat left bottom/0 100%;
+  transition: background-size 0.3s;
+}
+.anim-underline:hover, .anim-underline:active {
+  background-size: 100% 100%;
+}
+
+body {
+  margin: 0;
+  font-family: arial, sans-serif;
+  font-size: 3vw;
+}
+@media (orientation: landscape) {
+  body {
+    font-size: 2vw;
+  }
+}
+
+h1 {
+  margin: 0.75vw;
+}
+
+a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+
+img {
+  display: inline-block;
+  max-width: 25%;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+@media (orientation: landscape) {
+  img {
+    max-width: 20%;
+  }
+}
+@media (orientation: landscape) and (max-width: 768px) {
+  img {
+    max-width: 15%;
+  }
+}
+
+th {
+  padding-top: 2.6vw;
+  padding-bottom: 2.6vw;
+}
+@media (orientation: landscape) and (min-width: 992px) {
+  th {
+    padding-top: 1.3vw;
+    padding-bottom: 1.3vw;
+  }
+}
+
+td {
+  padding-top: 1.3vw;
+}
+
+.header {
+  background: #299ec2;
+  color: #fdcb46;
+  padding-top: 0.1vw;
+  padding-bottom: 0.1vw;
+  text-align: center;
+}
+
+.footer {
+  background: #299ec2;
+  color: #fdcb46;
+  padding-top: 0.1vw;
+  padding-bottom: 0.1vw;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+.footer__list {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0.65vw;
+  list-style: none;
+  font-size: 4vw;
+}
+@media (orientation: landscape) {
+  .footer__list {
+    font-size: 2vw;
+  }
+}
+@media (orientation: landscape) and (max-width: 768px) {
+  .footer__list {
+    font-size: 2.3vw;
+  }
+}
+.footer a {
+  color: #fdcb46;
+  animation: btn--shake 5s infinite;
+}
+
+.btn--footer {
+  padding: 0.8vw;
+  border-radius: 15px;
+  position: relative;
+}
+.btn--footer .btn__bg {
+  padding: 1vw;
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #2386a5;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s;
+}
+.btn--footer:hover .btn__bg {
+  opacity: 1;
+}
+
+.menus {
+  padding: 1vw 2vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@media (orientation: landscape) {
+  .menus {
+    padding: 1.3vw 1.8vw;
+  }
+}
+.menus__card {
+  width: 40%;
+  height: 50vh;
+  /*50% de la hauteur de l'écran = 50vh*/
+  margin: 1.3vw;
+  /* 1.3% de la largeur de l'écran = 1.3vw*/
+  padding: 1vw;
+  text-align: center;
+  box-shadow: 0 0 1.3vw #dad8d8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (orientation: landscape) {
+  .menus__card {
+    width: 15%;
+    padding: 0;
+    height: 40vh;
+  }
+}
+@media (orientation: landscape) and (max-width: 768px) {
+  .menus__card {
+    width: 40%;
+  }
+}
+@media (orientation: landscape) and (min-width: 768px) and (max-width: 992px) {
+  .menus__card {
+    height: 50vh;
+    padding: 1.3vw;
+  }
+}
+@media (orientation: landscape) and (min-width: 992px) {
+  .menus__card {
+    width: 20%;
+    height: 60vh;
+  }
+}
+.menus__card--orange {
+  background: #fcdfdb;
+}
+.menus__card--pink {
+  background: #fff5fe;
+}
+.menus__card--blue {
+  background: #f9f9f9;
+}
+.menus__card--green {
+  background: #fdfffd;
+}
+
+.pos-rel {
+  position: relative;
+  bottom: 7%;
+}
+@media (orientation: landscape) {
+  .pos-rel {
+    bottom: 18%;
+  }
+}
+@media (orientation: landscape) and (min-width: 768px) and (max-width: 992px) {
+  .pos-rel {
+    bottom: 12%;
+  }
+}
+@media (orientation: landscape) and (min-width: 501px) and (max-width: 768px) {
+  .pos-rel__subtitle {
+    bottom: 25%;
+  }
+}
+
+.font {
+  font-weight: normal;
+  /* not default bold*/
+}
+.font__title {
+  margin: 0;
+}
+@media (orientation: landscape) {
+  .font__title {
+    height: 50%;
+    /*separate __title and __subtitle*/
+  }
+}
+.font__title--enchantee {
+  font-family: "Devonshire";
+  font-size: 5vw;
+}
+@media (orientation: landscape) {
+  .font__title--enchantee {
+    font-size: 3vw;
+    line-height: 2.6vw;
+    /*no big space between "la note" and "enchantee" if they are one above the other*/
+  }
+}
+.font__title--alafrancaise {
+  font-size: 3.5vw;
+  font-family: "Croissant One";
+  background: linear-gradient(80deg, #e38a12 0%, #a56799 50%, #8f5aff 100%);
+  /*gradient color (degree of skew, $color left-to-right percent)*/
+  -webkit-background-clip: text;
+  /*background becomes the color of the text */
+  color: transparent;
+  /*text being transparent allows you to see the background-clip work.*/
+}
+@media (orientation: landscape) {
+  .font__title--alafrancaise {
+    font-size: 2vw;
+  }
+}
+.font__title--papilles {
+  font-family: "cookie";
+  font-size: 5.5vw;
+  background: linear-gradient(80deg, #0228dd 0%, #0670f3 50%, #229df9 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+@media (orientation: landscape) {
+  .font__title--papilles {
+    font-size: 3.5vw;
+  }
+}
+.font__title--gout {
+  font-family: "kaushan script";
+  font-size: 4.5vw;
+  background: linear-gradient(80deg, #41963c 0%, #80cb5e 50%, #beff7f 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+@media (orientation: landscape) {
+  .font__title--gout {
+    font-size: 2.8vw;
+  }
+}
+@media (orientation: landscape) and (max-width: 992px) {
+  .font__title--gout {
+    font-size: 3vw;
+  }
+}
+.font__subtitle {
+  font-size: 5vw;
+}
+@media (orientation: landscape) {
+  .font__subtitle {
+    font-size: 3vw;
+  }
+}
+.font__subtitle--enchantee {
+  font-size: 4vw;
+  font-family: "Segoe Print";
+  font-weight: bold;
+  margin-top: 1.3vw;
+}
+@media (orientation: landscape) {
+  .font__subtitle--enchantee {
+    font-size: 3vw;
+  }
+}
+.font__subtitle--alafrancaise {
+  font-family: "Cambria";
+  font-weight: bold;
+  font-size: 3.5vw;
+  color: #c77412;
+}
+.font__subtitle--papilles {
+  font-family: "Segoe Print";
+  color: #229df9;
+}
+.font__subtitle--gout {
+  font-family: "Segoe Print";
+  color: #41963c;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  /*.btn in the middle of the page*/
+  text-align: center;
+  /*content of .btn being in the middle of his parent*/
+  margin-bottom: 15vw;
+  /*footer being fixed, allows .btn to be full visible.*/
+}
+@media (orientation: landscape) {
+  .btn {
+    margin-bottom: 8vw;
+  }
+}
+.btn--soon {
+  width: 45%;
+  background: #299ec2;
+  color: #fdcb46;
+  padding-top: 0.1vw;
+  padding-bottom: 0.1vw;
+  border-radius: 15px;
+  padding: 1.04vw;
+  margin: 2.6vw 0;
+  border: none;
+}
+@media (orientation: landscape) {
+  .btn--soon {
+    width: 25%;
+  }
+}
+@media (orientation: landscape) and (max-width: 768px) {
+  .btn--soon {
+    width: 35%;
+    padding: 0.8vw;
+  }
+}
+@media (orientation: landscape) and (min-width: 992px) {
+  .btn--soon {
+    padding: 0.5vw;
+  }
+}
+.btn--soon > h2 {
+  font-size: 4vw;
+  margin: 0;
+  /*bouton being too big with parent's margin*/
+}
+@media (orientation: landscape) {
+  .btn--soon > h2 {
+    font-size: 2vw;
+  }
+}
+@media (orientation: landscape) and (max-width: 992px) {
+  .btn--soon > h2 {
+    font-size: 2.5vw;
+  }
+}
+.btn__dot {
+  height: 10px;
+  width: 10px;
+  background-color: #fdcb46;
+  border-radius: 50%;
+  vertical-align: top;
+}
+
+/*# sourceMappingURL=style.css.map */

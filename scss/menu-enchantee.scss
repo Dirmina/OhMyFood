@@ -1,0 +1,119 @@
+/* IMPORTANT ! run sass with the command : npm run enchantee*/
+/* IMPORTANT ! run sass with the command : npm run enchantee*/
+/* IMPORTANT ! run sass with the command : npm run enchantee*/
+/* IMPORTANT ! run sass with the command : npm run enchantee*/
+@import "./partials/Utils/variables";
+@import "./partials/Utils/mixins";
+@import "./partials/Base/base";
+@import "./partials/Components/animations";
+@import url('https://fonts.googleapis.com/css?family=Devonshire&display=swap'); /*font-family: devonshire (enchantee), menu segoe print*/
+
+img { /*Specifity (0,0,1).*/
+	max-width: 9%;
+    vertical-align: middle; /*align the note with the last h2, is ok for the first too.*/
+}
+
+.img { /*concern only the first title, specificity applies (0,1,0).*/
+    max-width: 12%;
+}
+
+h2 > span { /* the text of the last title*/
+     vertical-align: middle;
+    }
+
+.enchantee {
+    background: map-get($colour-card,enchantee);
+    @include menu-details;
+}
+
+.menus {
+    @include menu-details__menus;
+    &__card {
+        @include menu-details__card;
+        margin:0;
+    }
+}
+.font {
+    font-weight: normal;
+    font-family: "arial black"; /*title on the white*/
+    @media (orientation: landscape) {
+        @media (min-width: 992px) {
+            font-size: 2.3vw;
+        }
+    }
+    &__title {
+        &--enchantee {
+        font-family: 'Devonshire';
+        font-size: 4vw;
+        margin: 0;
+            &-last {
+                padding: 6.5vw 1.3vw;
+                @media (orientation: landscape) {
+                     @media (min-width: 992px) {
+                        padding: 2.6vw 1.3vw;
+                    }
+                }
+            }
+        }    
+    }
+    &__table {
+		&--enchantee {
+            font-size: 2vw;
+            font-family: "Segoe Print";
+            margin: 0;
+            margin-bottom: 10vw;
+            @media (min-width: 992px) {
+                font-size: 2.4vw;
+            }
+            @media (orientation: landscape) {
+                font-size: 1.7vw;
+                @media (max-width: 768px) {
+                    font-size: 1.8vw;
+                }
+                @media (max-width: 992px) {
+                    font-size: 1.6vw;
+                }
+                @media (min-width: 992px) {
+                    font-size: 1.4vw;     
+                }
+            }
+        }
+        &--title {
+            font-size: 2.8vw;
+            font-weight:bold;
+            @media (orientation: landscape) {
+                @media (min-width: 992px) {
+                    font-size: 2.5vw;
+                }
+            }
+        }
+    }
+}
+
+tr {
+    height: 3.9vw;
+}
+
+.table {
+    &__cell {
+        &--left {
+            text-align: left;
+            padding-left: 6.5vw;
+            @media (max-width:1200px) {
+                padding-left: 6.5vw;
+				padding-right: 10vw;
+            }    
+        }
+        &--right { 
+            text-align: right;
+            font-weight: bold;
+            padding-right: 6.5vw;
+        }
+    }
+}
+
+.double-line {  
+    background: linear-gradient(to right, #000,#000, #000,map-get($colour-card, enchantee),map-get($colour-card, enchantee), map-get($colour-card, enchantee), map-get($colour-card, enchantee), #000, #000, #000) no-repeat center;
+    /*no-repeat for 1 line*/
+    background-size:90vw 5px; /*horizontal size of the background, so the size of the gradient. height of the line.*/
+}

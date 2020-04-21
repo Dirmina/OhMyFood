@@ -1,0 +1,102 @@
+body {
+	margin: 0;
+	font-family: arial, sans-serif;
+	font-size: 3vw;
+	@media (orientation: landscape) {
+		font-size: 2vw;
+	}
+}
+h1 {
+    margin: 0.75vw;
+}
+a { 
+	display:block;
+	color: #000; //index.html => enchantee menu is black, not in the blue/violet default color of a
+	text-decoration: none;
+}
+
+img {
+	display:inline-block;
+	max-width: 25%;
+	padding-bottom:0;
+	margin-bottom:0;
+	@media (orientation: landscape) {
+		max-width: 20%;
+		@media (max-width: 768px) {
+			max-width: 15%;
+		}
+	}
+}
+
+th { 
+    padding-top: 2.6vw;
+	padding-bottom: 2.6vw;
+	@media (orientation: landscape) {
+		@media (min-width: 992px) {
+			padding-top: 1.3vw;
+			padding-bottom: 1.3vw;
+		}
+	}
+}
+td {
+    padding-top: 1.3vw;
+}
+
+.header {
+	@include main-style;
+    text-align: center;
+} 
+
+.footer {
+    @include main-style;
+	position:fixed;
+    width: 100%;
+	bottom:0;
+	&__list {
+		display:flex;
+		justify-content: space-between;
+		padding-left: 20px;
+        padding-right: 20px;
+        margin:0.65vw;
+		list-style:none;
+		font-size: 4vw;
+		@media (orientation: landscape) {
+			font-size: 2vw;
+			@media (max-width: 768px)  {
+				font-size: 2.3vw;
+			}
+		}
+	}
+        a { //animation wiggle
+            color: $colour-secondary;
+            animation: btn--shake 5s infinite;
+        }
+	}
+ 	
+
+
+.btn {
+    &--footer {
+		padding: 0.8vw;
+		border-radius: 15px;
+		position:relative;
+		& .btn__bg {
+			padding: 1vw;
+			border-radius: 15px;
+			position: absolute; //top right bot left = 0 => cover all the btn
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-color: darken($colour-primary, 7);
+			opacity: 0;
+			z-index: -1; //text is visible
+			transition: opacity 0.4s; //animation
+		}
+	}
+	&--footer:hover {
+		& .btn__bg {
+			opacity: 1; //animation
+		}
+	}
+}

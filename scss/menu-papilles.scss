@@ -1,0 +1,130 @@
+/* IMPORTANT ! run sass with the command : npm run papilles*/
+/* IMPORTANT ! run sass with the command : npm run papilles*/
+/* IMPORTANT ! run sass with the command : npm run papilles*/
+/* IMPORTANT ! run sass with the command : npm run papilles*/
+
+@import "./partials/Utils/variables";
+@import "./partials/Utils/mixins";
+@import "./partials/Base/base";
+@import "./partials/Components/animations";
+@import url('https://fonts.googleapis.com/css?family=Cookie&display=swap'); /*font-family: cookie (papilles/gout)*/
+
+.papilles {
+    background: map-get($colour-card, papilles);
+    @include menu-details;
+}
+.menus {
+    @include menu-details__menus;
+    &__card {
+      @include menu-details__card;
+    }
+}
+.font {
+    font-weight: normal;
+    font-family: "arial black"; /*title on the white*/
+    @media (orientation: landscape) {
+        @media (min-width: 992px) {
+            font-size: 2.3vw;
+        }
+    }
+    &__title {   
+        &--papilles {
+            font-family: 'cookie';
+            font-style: italic;
+            font-size: 6vw;
+            background: linear-gradient(80deg, map-get($colour-text-papilles, first) 0%,map-get($colour-text-papilles, secund) 50%, map-get($colour-text-papilles, third) 100%);
+            /*gradient color (degree of skew, $color left-to-right percent)*/
+            -webkit-background-clip: text; /*background becomes the color of the text*/
+            color: transparent;/*text being transparent allows you to see the background-clip work.*/
+        }
+    }
+    &__table {
+		&--papilles {
+            font-size: 2vw;
+            font-family: "Segoe Print";
+            margin-bottom: 14.3vw;
+            @media (min-width: 992px) {
+                font-size: 2.4vw;
+            }
+            @media (orientation: landscape) {
+                font-size: 1.7vw;
+                @media (max-width: 768px) {
+                    font-size: 1.8vw;
+                }
+                @media (max-width: 992px) {
+                    font-size: 1.6vw;
+                }
+                @media (min-width: 992px) {
+                    font-size: 1.4vw;     
+                }
+            }
+        }
+        &--title {
+            font-size: 2.4vw;
+            font-weight:bold;
+            @media (orientation: landscape) {
+                @media (min-width: 992px) {
+                    font-size: 2.1vw;
+                }
+            }
+        }
+	}
+}
+
+tr {
+    height: 3.9vw;
+}
+
+.table {
+    &__cell {
+        &--th {
+            border:1px black solid;
+        }
+        &--left {
+            text-align: left;
+            padding-left: 6.5vw;
+            @media(max-width:1200px) {
+                padding-right: 10vw;
+			}
+        }
+        &--right {
+            text-align: right;
+            font-weight: bold;
+            padding-right: 6.5vw;
+        }
+    }
+}
+
+.double-line--first { 
+    background: linear-gradient(to right, map-get($colour-text-papilles, first), map-get($colour-card, papilles), map-get($colour-card, papilles), map-get($colour-text-papilles, first)) no-repeat center;
+    /*no-repeat for 1 line*/
+    background-size:90vw 5px; /*horizontal size of the background, so the size of the gradient. height of the line.*/
+}
+
+
+
+.double-line--secund { 
+    background: linear-gradient(to right, map-get($colour-text-papilles, secund), map-get($colour-card, papilles), map-get($colour-card, papilles),map-get($colour-text-papilles, secund)) no-repeat center;
+            background-size:90vw 5px;
+    }
+
+.double-line--third { 
+    background: linear-gradient(to right, map-get($colour-text-papilles, third), map-get($colour-card, papilles), map-get($colour-card, papilles), map-get($colour-text-papilles, third)) no-repeat center;
+    background-size:90vw 5px;
+}
+
+
+
+.anim-underline {  /* see __animations.scss for extension.*/
+    &-first { 
+        background: linear-gradient(to top, map-get($colour-text-papilles, first) 0%, map-get($colour-text-papilles, first) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+}
+
+    &-secund {
+        background: linear-gradient(to top, map-get($colour-text-papilles, secund) 0%, map-get($colour-text-papilles, secund) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+}
+
+    &-third {
+        background: linear-gradient(to top, map-get($colour-text-papilles, third) 0%, map-get($colour-text-papilles, third) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+}
+}

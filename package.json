@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch ./scss/main.scss:./css/style.css",
+    "ML": "sass --watch ./scss/ML.scss:./css/style-ML.css",
     "enchantee": "sass --watch ./scss/menu-enchantee.scss:./css/style-menu-enchantee.css ",
     "alafrancaise": "sass --watch ./scss/menu-alafrancaise.scss:./css/style-menu-alafrancaise.css",
     "papilles": "sass --watch ./scss/menu-papilles.scss:./css/style-menu-papilles.css",

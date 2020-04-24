@@ -94,9 +94,13 @@ th {font-size: 2vw;}
     }
 }
 
+.line {
+    clip-path: polygon(0 48%, 7% 46%, 14% 44%, 23% 44%, 33% 45%, 45% 47%, 58% 46%, 75% 43%, 84% 43%, 100% 48%, 100% 52%, 87% 49%, 75% 48%, 59% 52%, 49% 53%, 31% 50%, 23% 50%, 14% 51%, 8% 49%, 0 52%);
+}
+.right-line {  
+    background: linear-gradient(to right, map-get($colour-text-gout, third),map-get($colour-text-gout, secund), map-get($colour-text-gout, first));
+}
 
-.double-line--gradient {  
-    background: linear-gradient(to right, map-get($colour-text-gout, first),map-get($colour-text-gout, secund), map-get($colour-text-gout, third),#fff,#fff, #fff, #fff, map-get($colour-text-gout, third), map-get($colour-text-gout, secund), map-get($colour-text-gout, first)) no-repeat center;
-    /*no-repeat for 1 line*/
-    background-size:90vw 5px; /*horizontal size of the background, so the size of the gradient. height of the line.*/
+.left-line {  
+    background: linear-gradient(to right, map-get($colour-text-gout, first), map-get($colour-text-gout, secund), map-get($colour-text-gout, third));
 }

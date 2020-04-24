@@ -326,7 +326,7 @@ td {
 .font__title--alafrancaise {
   font-size: 3.5vw;
   font-family: "Croissant One";
-  background: linear-gradient(80deg, #e38a12 0%, #a56799 50%, #8f5aff 100%);
+  background: linear-gradient(80deg, #e38a12 30%, #a56799 50%, #8f5aff 70%);
   /*gradient color (degree of skew, $color left-to-right percent)*/
   -webkit-background-clip: text;
   /*background becomes the color of the text */

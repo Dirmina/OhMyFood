@@ -44,6 +44,7 @@ img {
 th {
   padding-top: 2.6vw;
   padding-bottom: 2.6vw;
+  width: 33%;
 }
 @media (orientation: landscape) and (min-width: 992px) {
   th {
@@ -344,11 +345,14 @@ tr {
   padding-right: 6.5vw;
 }
 
-.double-line {
-  background: linear-gradient(to right, #000, #000, #000, #fcdfdb, #fcdfdb, #fcdfdb, #fcdfdb, #000, #000, #000) no-repeat center;
-  /*no-repeat for 1 line*/
-  background-size: 90vw 5px;
-  /*horizontal size of the background, so the size of the gradient. height of the line.*/
+.left-line {
+  background: #000;
+  clip-path: polygon(70% 47%, 100% 50%, 100% 50%, 33% 52%, 0 51%, 0 49%);
+}
+
+.right-line {
+  background: #000;
+  clip-path: polygon(78% 51%, 100% 51%, 100% 49%, 30% 47%, 0 50%, 0 50%);
 }
 
 /*# sourceMappingURL=style-menu-enchantee.css.map */

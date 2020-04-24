@@ -94,23 +94,22 @@ tr {
         }
     }
 }
-
-.double-line--first { 
-    background: linear-gradient(to right, map-get($colour-text-papilles, first), map-get($colour-card, papilles), map-get($colour-card, papilles), map-get($colour-text-papilles, first)) no-repeat center;
-    /*no-repeat for 1 line*/
-    background-size:90vw 5px; /*horizontal size of the background, so the size of the gradient. height of the line.*/
+.left-line {
+    clip-path: polygon(100% 48%, 100% 52%, 5% 52%, 2% 50%, 0 42%, 4% 47%, 9% 48%);
+}
+.right-line {
+    clip-path: polygon(91% 48%, 96% 47%, 100% 42%, 98% 50%, 95% 52%, 0 52%, 0 48%);
+}
+.line--commencer { 
+    background: map-get($colour-text-papilles, first);
 }
 
-
-
-.double-line--secund { 
-    background: linear-gradient(to right, map-get($colour-text-papilles, secund), map-get($colour-card, papilles), map-get($colour-card, papilles),map-get($colour-text-papilles, secund)) no-repeat center;
-            background-size:90vw 5px;
+.line--continuer { 
+    background:map-get($colour-text-papilles, secund);
     }
 
-.double-line--third { 
-    background: linear-gradient(to right, map-get($colour-text-papilles, third), map-get($colour-card, papilles), map-get($colour-card, papilles), map-get($colour-text-papilles, third)) no-repeat center;
-    background-size:90vw 5px;
+.line--terminer { 
+    background:map-get($colour-text-papilles, third);
 }
 
 

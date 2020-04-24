@@ -102,7 +102,7 @@
 		&--alafrancaise {
 			font-size: 3.5vw;
 			font-family: 'Croissant One';
-			background: linear-gradient(80deg, map-get($colour-text-alafrancaise, first-title) 0%,map-get($colour-text-alafrancaise, secund) 50%, map-get($colour-text-alafrancaise, last-title) 100%);
+			background: linear-gradient(80deg, map-get($colour-text-alafrancaise, first-title) 30%,map-get($colour-text-alafrancaise, secund) 50%, map-get($colour-text-alafrancaise, last-title) 70%);
 			/*gradient color (degree of skew, $color left-to-right percent)*/
 			-webkit-background-clip: text; /*background becomes the color of the text */
 			color: transparent; /*text being transparent allows you to see the background-clip work.*/

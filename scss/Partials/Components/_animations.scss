@@ -40,7 +40,7 @@
 	&--alafrancaise,
 	&--papilles,
 	&--gout {
-		@include zoom-menu;
+		transition: all 1s;
 	}
 }
 

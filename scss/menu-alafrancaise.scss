@@ -33,7 +33,7 @@
         &--alafrancaise {
             font-size: 3vw;
             font-family: 'Croissant One';
-            background: -webkit-linear-gradient(80deg, map-get($colour-text-alafrancaise, first-title) 0%,map-get($colour-text-alafrancaise, secund) 50%, map-get($colour-text-alafrancaise, last-title) 100%);
+            background: -webkit-linear-gradient(-80deg, map-get($colour-text-alafrancaise, first-title) 30%,map-get($colour-text-alafrancaise, secund) 50%, map-get($colour-text-alafrancaise, last-title) 70%);
             /*gradient color (degree of skew, $color left-to-right percent)*/
             -webkit-background-clip: text;/*background becomes the color of the text*/
             color: transparent;/*text being transparent allows you to see the background-clip work.*/
@@ -99,20 +99,24 @@ tr {
     }
 }
 
-.double-line--first { 
-    background: linear-gradient(to right, map-get($colour-text-alafrancaise, first-title), map-get($colour-card, alafrancaise), map-get($colour-card, alafrancaise), map-get($colour-text-alafrancaise, first-title)) no-repeat center;
-    /*no-repeat for 1 line*/
-    background-size:90vw 5px; /*horizontal size of the background, so the size of the gradient. height of the line.*/
+.right-line {
+    clip-path: polygon(6% 48%, 12% 43%, 100% 50%, 100% 50%, 12% 57%, 6% 52%, 0% 50%);
 }
 
-.double-line--secund { 
-    background: linear-gradient(to right, map-get($colour-text-alafrancaise, secund), map-get($colour-card, alafrancaise), map-get($colour-card, alafrancaise), map-get($colour-text-alafrancaise, secund)) no-repeat center;
-    background-size:90vw 5px;
+.left-line {
+    clip-path: polygon(0 50%, 88% 43%, 94% 47%, 100% 49%, 94% 52%, 88% 57%, 0 50%);
+
+}
+.line--appetit { 
+    background: map-get($colour-text-alafrancaise, first-title);
 }
 
-.double-line--third {   
-    background: linear-gradient(to right, map-get($colour-text-alafrancaise, third), map-get($colour-card, alafrancaise), map-get($colour-card, alafrancaise), map-get($colour-text-alafrancaise, third)) no-repeat center;
-    background-size:90vw 5px;
+.line--plaisir { 
+    background: map-get($colour-text-alafrancaise, secund);
+}
+
+.line--gourmandise {   
+    background:map-get($colour-text-alafrancaise, third);
 }
 
 
